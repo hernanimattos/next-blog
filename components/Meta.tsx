@@ -12,7 +12,7 @@ interface Meta {
 }
 
 
-const Header:React.FC <Props> = ({meta}) =>  {
+const Meta:React.FC<Props> = ({meta}) =>  {
 
     return (
         <Head>
@@ -22,5 +22,5 @@ const Header:React.FC <Props> = ({meta}) =>  {
     )
 }
 
-export default Header;
+export default Meta;
 
