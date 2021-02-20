@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Link, { LinkProps } from 'next/link';
 
 interface IProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-    to: string;
+    to: string | { href: string; as: string };
     linkp: Array<any>;
     text: string;
 }

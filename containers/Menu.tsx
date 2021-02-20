@@ -4,7 +4,7 @@ import CLink from '../components/CLink';
 
 const Menu: React.FC = () => {
     const testeLinks = [
-        { to: '/singlePost', text: 'contato' },
+        { to: '/post/1', text: 'contato' },
         { to: '/', target: '', text: 'teste' },
     ];
 

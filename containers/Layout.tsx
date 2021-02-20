@@ -3,15 +3,16 @@ import MainContainer from './MainContainer';
 import Menu from './Menu';
 import Header from '@components/Header';
 
-//import Menu from '@components/Menu';
-const Layout: React.FC = ({ children }) => {
-    const meta = [
-        {
-            property: 'teste',
-            content: 'dddd',
-        },
-    ];
+interface Meta {
+    property: string;
+    content: string;
+}
 
+interface IProps {
+    meta?: Array<Meta>;
+}
+
+const Layout: React.FC<IProps> = ({ children, meta }) => {
     return (
         <main>
             <Header meta={meta}></Header>
