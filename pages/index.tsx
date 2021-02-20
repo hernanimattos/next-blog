@@ -1,7 +1,7 @@
 import Meta from '../components/Meta'
 import styled, { createGlobalStyle } from 'styled-components';
 import Layout from '../containers/Layout'
-import Menu from '../components/Menu'
+import Menu from '../containers/Menu'
 const GlobalStyle:any = createGlobalStyle`
  h1 {
    font-size: 1rem;

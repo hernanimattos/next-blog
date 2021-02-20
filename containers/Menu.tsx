@@ -1,9 +1,11 @@
 import * as React from 'react';
-import Link from 'next/link'
-import Layout from '../containers/Layout'
+import Layout from './Layout'
+import CLink from '../components/CLink'
 
 
 const Menu:React.FC = () => {
+
+  const testeLinks = [{to:'/', target: 'teste tatget', text:'teste'}, {to:'/', target: '', text:'teste'}]
 
     return(
 
@@ -26,12 +28,11 @@ const Menu:React.FC = () => {
                 </button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-           
+
                 <div className="hidden sm:block">
+
                   <div className="flex space-x-4">
-                    <a href="#" className="bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+                    <CLink linkp={ testeLinks } className="bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"/>
                   </div>
                 </div>
               </div>
