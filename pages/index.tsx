@@ -1,8 +1,7 @@
-import Meta from '../components/Meta';
 import { createGlobalStyle } from 'styled-components';
-import Layout from '../containers/Layout';
-import Menu from '../containers/Menu';
+import Layout from '@containers/Layout';
 import MainContainer from '@containers/MainContainer';
+import PostCard from '@components/PostCard';
 const GlobalStyle: any = createGlobalStyle`
  h1 {
    font-size: 1rem;
@@ -12,20 +11,18 @@ const GlobalStyle: any = createGlobalStyle`
 `;
 
 export default function Home() {
-    const meta = [
-        {
-            property: 'teste',
-            content: 'dddd',
-        },
-    ];
     return (
         <>
-            <Meta meta={meta}></Meta>
             <GlobalStyle />
-            <Menu />
-            <Layout>
-                <MainContainer />
-            </Layout>
+            <Layout />
+            <MainContainer>
+                <PostCard />
+                <PostCard />
+                <PostCard />
+                <PostCard />
+                <PostCard />
+                <PostCard />
+            </MainContainer>
         </>
     );
 }
