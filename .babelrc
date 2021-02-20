@@ -7,7 +7,7 @@
             {
                 "root": ["./"],
                 "alias": {
-                    "@components": "./src/components",
+                    "@components": "./components",
                     "@api": "./src/api",
                     "@models": "./src/models",
                     "@screens": "./src/screens",
