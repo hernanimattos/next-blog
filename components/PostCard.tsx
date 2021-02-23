@@ -1,6 +1,18 @@
 import * as React from 'react';
+import Utils from '@utils/utils';
+import { NextComponentType } from 'next';
 
-const PostCard: React.FC = () => {
+interface IPostCard {
+    _id: string;
+    title: string;
+    picture: string;
+    description: string;
+}
+
+const PostCard: NextComponentType<{}, {}, IPostCard> = (props) => {
+    const { _id, title, picture, description } = props;
+    const newTitle = Utils.cutString(title, 0, 10);
+    // console.log(props);
     return (
         <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
             <article className="overflow-hidden rounded-lg shadow-lg">
@@ -16,9 +28,9 @@ const PostCard: React.FC = () => {
                     <h1 className="text-lg">
                         <a
                             className="no-underline hover:underline text-black"
-                            href="#"
+                            href={`post/${_id}`}
                         >
-                            Article Title
+                            {newTitle}
                         </a>
                     </h1>
                     <p className="text-grey-darker text-sm">14/4/19</p>
@@ -29,7 +41,7 @@ const PostCard: React.FC = () => {
                         className="flex items-center no-underline hover:underline text-black"
                         href="#"
                     >
-                        <p className="ml-2 text-sm">Pequena descrição</p>
+                        <p className="ml-2 text-sm"> {title}</p>
                     </a>
                     <a
                         className="no-underline text-grey-darker hover:text-red-dark"

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PostCard from '../components/PostCard';
 
 const MainContainer: React.FC = ({ children }) => {
     return (
