@@ -3,14 +3,14 @@ import Utils from '@utils/utils';
 import { NextComponentType } from 'next';
 
 interface IPostCard {
-    _id: string;
+    id: string;
     title: string;
     picture: string;
     description: string;
 }
 
 const PostCard: NextComponentType<{}, {}, IPostCard> = (props) => {
-    const { _id, title, picture, description } = props;
+    const { id, title, picture, description } = props;
     const newTitle = Utils.cutString(title, 0, 10);
     // console.log(props);
     return (
@@ -28,7 +28,7 @@ const PostCard: NextComponentType<{}, {}, IPostCard> = (props) => {
                     <h1 className="text-lg">
                         <a
                             className="no-underline hover:underline text-black"
-                            href={`post/${_id}`}
+                            href={`post/${id}`}
                         >
                             {newTitle}
                         </a>

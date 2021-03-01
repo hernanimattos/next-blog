@@ -8,6 +8,8 @@ const Menu: React.FC = () => {
         { to: '/', target: '', text: 'teste' },
     ];
 
+    console.log('menu');
+
     return (
         <nav className="bg-gray-800">
             <div className="container mx-auto">

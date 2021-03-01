@@ -1,8 +1,6 @@
 import axios from 'axios';
 import config from './config';
 
-console.log(config, '-----')
-
 class Provider {
     axios = null
     config = null

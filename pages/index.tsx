@@ -14,7 +14,7 @@ const GlobalStyle: any = createGlobalStyle`
  }
 `;
 interface IPostCard {
-    _id: string;
+    id: string;
     title: string;
     picture: string;
     description: string;
@@ -33,7 +33,7 @@ const Home: NextPage<IHome> = ({ trips }) => {
             <MainContainer>
                 {trips &&
                     trips.map((trips) => (
-                        <PostCard {...trips} key={trips._id} />
+                        <PostCard {...trips} key={trips.id} />
                     ))}
             </MainContainer>
         </>
