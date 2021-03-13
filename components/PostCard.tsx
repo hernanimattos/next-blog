@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Utils from '@utils/utils';
 import { NextComponentType } from 'next';
+import Link from 'next/link';
+import NavLink from '@components/NavLink/';
 
 interface IPostCard {
     id: string;
@@ -12,7 +14,7 @@ interface IPostCard {
 const PostCard: NextComponentType<{}, {}, IPostCard> = (props) => {
     const { id, title, picture, description } = props;
     const newTitle = Utils.cutString(title, 0, 10);
-    // console.log(props);
+
     return (
         <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
             <article className="overflow-hidden rounded-lg shadow-lg">
@@ -26,12 +28,7 @@ const PostCard: NextComponentType<{}, {}, IPostCard> = (props) => {
 
                 <header className="flex items-center justify-between leading-tight p-2 md:p-4">
                     <h1 className="text-lg">
-                        <a
-                            className="no-underline hover:underline text-black"
-                            href={`post/${id}`}
-                        >
-                            {newTitle}
-                        </a>
+                        <Link href={`/post/${id}`}>{newTitle}</Link>
                     </h1>
                     <p className="text-grey-darker text-sm">14/4/19</p>
                 </header>

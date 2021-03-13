@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import Link, { LinkProps } from 'next/link';
+import Link from 'next/link';
 
 interface IProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     to: string | { href: string; as: string };
-    linkp: Array<any>;
+    nav: Array<any>;
     text: string;
 }
 
@@ -21,13 +21,14 @@ const LinkWrapper = React.forwardRef(({ to, ...props }: IProps, ref: any) => {
     );
 });
 
-const CLink = (props) => {
-    const { linkp } = props;
+const NavLink = (props) => {
+    const { nav } = props;
 
     return (
         <Fragment>
-            {linkp &&
-                linkp.map((linkProps: IProps, i: number) => (
+            {nav &&
+                Array.isArray(nav) &&
+                nav.map((linkProps: IProps, i: number) => (
                     <LinkWrapper
                         {...linkProps}
                         {...props}
@@ -38,4 +39,4 @@ const CLink = (props) => {
     );
 };
 
-export default CLink;
+export default NavLink;

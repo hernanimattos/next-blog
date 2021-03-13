@@ -4,7 +4,7 @@ import MainContainer from '@containers/MainContainer';
 import PostCard from '@components/PostCard';
 
 import Http from '../api/Http';
-import { NextComponentType, NextPage } from 'next';
+import { NextPage } from 'next';
 
 const GlobalStyle: any = createGlobalStyle`
  h1 {
@@ -13,6 +13,7 @@ const GlobalStyle: any = createGlobalStyle`
   
  }
 `;
+
 interface IPostCard {
     id: string;
     title: string;
@@ -25,16 +26,16 @@ interface IHome {
     trips: Array<IPostCard>;
 }
 
-const Home: NextPage<IHome> = ({ trips }) => {
+const Home: NextPage<IHome> = (props) => {
+    const { trips } = props;
+
     return (
         <>
             <GlobalStyle />
             <Layout />
             <MainContainer>
                 {trips &&
-                    trips.map((trips) => (
-                        <PostCard {...trips} key={trips.id} />
-                    ))}
+                    trips.map((trip) => <PostCard {...trip} key={trip.id} />)}
             </MainContainer>
         </>
     );
@@ -42,6 +43,7 @@ const Home: NextPage<IHome> = ({ trips }) => {
 
 Home.getInitialProps = async () => {
     const { data } = await Http.get('trips');
+
     return { trips: data };
 };
 

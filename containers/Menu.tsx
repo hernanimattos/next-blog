@@ -1,15 +1,13 @@
 import * as React from 'react';
 import Layout from './Layout';
-import CLink from '../components/CLink';
+import NavLink from '../components/NavLink';
+
+const navigation = [
+    { to: '/', text: 'Home' },
+    { to: '/contato', target: '', text: 'Contato' },
+];
 
 const Menu: React.FC = () => {
-    const testeLinks = [
-        { to: '/post/1', text: 'contato' },
-        { to: '/', target: '', text: 'teste' },
-    ];
-
-    console.log('menu');
-
     return (
         <nav className="bg-gray-800">
             <div className="container mx-auto">
@@ -58,8 +56,8 @@ const Menu: React.FC = () => {
                         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                             <div className="hidden sm:block">
                                 <div className="flex space-x-4">
-                                    <CLink
-                                        linkp={testeLinks}
+                                    <NavLink
+                                        nav={navigation}
                                         className="bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                                     />
                                 </div>
